@@ -4,14 +4,20 @@ export default () => {
     //keep track of what is being typed via useState hook
     const [firstName, setFirstName] = useState(""); 
     const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     //handler when the form is submitted
     const onSubmitHandler = e => {
         //prevent default behavior of the submit
         e.preventDefault();
         //make a post request to create a new person
-        axios.post('http://localhost:8000/api/people', {
+        axios.post('http://localhost:8000/api/user', {
             firstName,
-            lastName
+            lastName,
+            email,
+            password,
+            confirmPassword
         })
             .then(res=>console.log(res))
             .catch(err=>console.log(err))
@@ -26,6 +32,18 @@ export default () => {
             <p>
                 <label>Last Name</label><br/>
                 <input type="text" onChange={(e)=>setLastName(e.target.value)} value={lastName}/>
+            </p>
+            <p>
+                <label>Email</label><br/>
+                <input type="text" onChange={(e)=>setEmail(e.target.value)} value={email}/>
+            </p>
+            <p>
+                <label>Password</label><br/>
+                <input type="text" onChange={(e)=>setPassword(e.target.value)} value={password}/>
+            </p>
+            <p>
+                <label>Confirm Password</label><br/>
+                <input type="text" onChange={(e)=>setConfirmPassword(e.target.value)} value={confirmPassword}/>
             </p>
             <input type="submit"/>
         </form>

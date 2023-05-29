@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import PersonForm from '../components/PersonForm';
+import UserRegister from '../components/UserRegister';
 export default () => {
     return (
         <div>
-           <PersonForm/>
+           <UserRegister/>
         </div>
     )
 }
