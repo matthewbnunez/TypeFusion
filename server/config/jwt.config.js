@@ -9,13 +9,3 @@ module.exports.authenticate = (req, res, next) => {
         }
     });
 };
-
-module.exports.authenticateHost = (req, res, next) => {
-    jwt.verify(req.cookies.hostToken, process.env.SECRET_KEY, (err, payload) => {
-        if (err) {
-        res.status(401).json({ verified: false });
-        } else {
-        next();
-        }
-    });
-};
