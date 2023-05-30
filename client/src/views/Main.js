@@ -4,6 +4,7 @@ export default () => {
     return (
         <div>
            <UserRegister/>
+           <UserLogin/>
         </div>
     )
 }
