@@ -2,7 +2,7 @@
 export default () => {
     return (
         <div>
-           <div></div>
+            <div>gvrdfss</div>
         </div>
-    )
-}
+    );
+};

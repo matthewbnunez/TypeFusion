@@ -1,16 +1,18 @@
 import "./App.css";
 import React from "react";
-import Main from "./views/Main";
 import { Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/LandingPage/Dashboard";
+import Main from "./pages/Main";
 
 function App() {
-  return (
-    <div className="App">
-      <routes>
-        <route element={<Main />} path="/" />
-      </routes>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Routes>
+                <Route element={<Dashboard />} path="/" />
+                <Route element={<Main />} path="/login" />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
